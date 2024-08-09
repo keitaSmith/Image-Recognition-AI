@@ -12,7 +12,7 @@ This web application leverages a pre-trained AI model to recognize and predict o
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/image-recognition-ai.git
+   git clone https://github.com/keitaSmith/image-recognition-ai.git
 2. Navigate into the project directory:
    ```bash
    cd image-recognition-ai
