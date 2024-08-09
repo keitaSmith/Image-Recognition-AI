@@ -1,38 +1,174 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(160deg, #032059 0%, #392d7f 70%, #e20756 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  color: #f3f3f3; /* Light color for text contrast */
+}
+
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  font-size: 3rem;
+  color: #fff; /* Vibrant pink for the header */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-description {
+  font-size: 1.2rem;
+  color: #032059;
+  margin: 0 auto 20px auto;
+  max-width: 1080px;
+  text-align: center;
+  line-height: 1.6;
+  background-color: #fff; /* Deep purple for contrast */
+  padding: 20px;
+  /* border-radius: 15px; */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Container for Image and Predictions */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1120px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allows flex items to wrap onto the next line */
+  background-color: #fff;
+  margin-top: 20px;
+}
+
+.image-section, .predictions-section {
+  flex: 1;
+  justify-content: center;
+  max-width: 540px;
+  /* border-radius: 15px; */
+  transition: transform 0.2s ease;
+}
+
+.image-section:hover, .predictions-section:hover {
+  /* transform: translateY(-10px); */
+}
+
+.image-uploader input[type="file"] {
+  padding: 15px 20px;
+  background-color: #e20756; /* Bright blue for buttons */
+  border: none;
+  /* border-radius: 10px; */
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.image-uploader input[type="file"]:hover {
+  background-color: #032059; /* Dark blue on hover */
+}
+
+.image-display img {
+  max-width: 100%;
+  /* border-radius: 15px; */
+  box-sizing: border-box;
+  border: 3px solid #e20756; /* Pink border around the image */
+  margin-bottom:-5px ;
+}
+
+.predictions-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-sizing: border-box;
+  background-color: #fff; /* Slightly transparent dark blue */
 }
 
-.App-link {
-  color: #61dafb;
+.predictions h3 {
+  font-size: 1.5rem;
+  color: #032059; /* Bright blue for section headers */
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.predictions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.predictions li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  color: #032059; /* Light color for text */
+}
+
+.predictions li span {
+  color: #e20756; /* Pink for emphasis */
+  font-weight: bold;
+}
+
+.loading-spinner {
+  border: 8px solid #032059;
+  border-top: 8px solid #e20756; /* Pink for the loading spinner */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 5px 20px;
+  background-color: #fff;
+  max-width: 1080px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.skills-section h3 {
+  color: #032059; /* Bright blue for headers */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top:20px;
+}
+
+.skills-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 1.1rem;
+  color: #032059; /* Light text color */
+}
+
+.skills-section li {
+  margin-bottom: 10px;
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items */
   }
-  to {
-    transform: rotate(360deg);
+
+  .image-section, .predictions-section {
+    min-width: 100%; /* Make sections full width in mobile view */
+    margin-top: 10px;
+  }
+
+  .predictions-section {
+    margin-top: 20px; /* Add some space between the image and predictions */
   }
 }
